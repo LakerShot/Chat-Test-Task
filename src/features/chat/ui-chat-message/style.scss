@@ -1,2 +1,38 @@
 @import '../../../assets/styles/variables-sass';
 
+.message {
+    position: relative;
+    word-break: break-word;
+    padding: 1rem;
+    background-color: $cParsley;
+    color: $cWhiteSmoke;
+    border-radius: 8px;
+    max-width: 80%;
+
+    &:before {
+        content: '';
+        width: 1.5rem;
+        height: 1.5rem;
+        border-radius: 50%;
+        background-color: $cParsley;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    &--from-user {
+        margin-left: auto;
+
+        &:before {
+            right: -.75rem;
+        }
+    }
+
+    &--from-bot {
+        margin-right: auto;
+
+        &:before {
+            left: -.75rem;
+        }
+    }
+}

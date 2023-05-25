@@ -54,7 +54,8 @@
             }
         }
 
-        &:hover {
+        &:hover,
+        &:focus {
             .actions__image {
                 transition: transform .2s ease-in;
                 transform: scale(1.2);

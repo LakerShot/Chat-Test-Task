@@ -1,3 +1,5 @@
+import { PERMITTED_ROLES } from "../../constants/chat";
+
 export type UUIDPayload = {
     uuid: string
 }
@@ -8,4 +10,14 @@ export type EUIDPayload = {
 
 export type CUIDPayload = {
     cuid: string
+}
+
+export type MessagePayload = CUIDPayload & {
+    text: string
+}
+
+export type Message = {
+    id: number,
+    message: string
+    role: PERMITTED_ROLES
 }
