@@ -1,6 +1,6 @@
 import { useLocalStorage} from "./useLocalStorage";
 import { CHAT_MESSAGES, CUID_LS_PREFIX, PERMITTED_ROLES } from "../constants/chat";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { ChatService } from "../api/services/chat-service";
 import {CUIDPayload, Message, MessagePayload} from "../api/types";
 import { v4 as uuidv4 } from 'uuid';
@@ -15,7 +15,7 @@ export const useChat = () => {
         }
     }, [])
 
-    const setNewMessage = (messageDto, role?: PERMITTED_ROLES) => {
+    const setNewMessage = (messageDto: unknown, role?: PERMITTED_ROLES) => {
         setMessages((prevState) => {
             const botMessage = {
                 id: uuidv4(),

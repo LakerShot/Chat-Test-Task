@@ -39,7 +39,7 @@ export const UiChatForm = ({ cuid, sendNewMessage, setNewLocalMessage, clearChat
         }
     }
 
-    const resetSession = (event: MouseEvent<HTMLButtonElement>): void => {
+    const resetSession = (): void => {
         //TODO: Write modal widget based on React Teleport
         const isConfirmed =  window.confirm('Are you sure that you wanna delete this session and clear all messages ?')
 

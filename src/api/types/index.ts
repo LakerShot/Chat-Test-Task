@@ -19,5 +19,5 @@ export type MessagePayload = CUIDPayload & {
 export type Message = {
     id: number,
     message: string
-    role: PERMITTED_ROLES
+    role: string
 }
