@@ -1,0 +1,102 @@
+.tooltip {
+    @include transit(opacity);
+    position: relative;
+    z-index: var(--zTooltip);
+    padding: 11px 20px 14px;
+    border-radius: 6px;
+    font-size: 14px;
+    line-height: 1.2;
+    background-color: $cPurple;
+    box-shadow: 4px 4px 4px rgba($cBlack, .5);
+    text-align: center;
+    color: var(--text-color);
+
+    &--pseudo-tail:after,
+    &__tail {
+        @include size(24px, 11px);
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    &--pseudo-tail {
+        &:after {
+            content: '';
+            top: 97%;
+            background: url('~@/assets/icons/tooltip-tail.svg') no-repeat;
+            filter: $fPurple;
+        }
+    }
+
+    &--right {
+        &:after,
+        .tooltip__tail {
+            top: 50%;
+            right: auto;
+            left: 2px;
+            transform: rotate(90deg) translateX(-50%);
+            transform-origin: left top;
+        }
+    }
+
+    &--left {
+        &:after,
+        .tooltip__tail {
+            top: 50%;
+            left: auto;
+            right: 2px;
+            transform: scaleY(-1) rotate(-90deg) translateX(50%);
+            transform-origin: right top;
+        }
+    }
+
+    &--top-left {
+        &:after,
+        .tooltip__tail {
+            top: calc(100% - 2px);
+            left: auto;
+            right: 4px;
+        }
+    }
+
+    &--top-right {
+        left: calc(100% + .2rem);
+        top: 0;
+        transform: translateY(-100%);
+
+        &:after,
+        .tooltip__tail {
+            top: calc(100% - 2px);
+            left: 4px;
+            right: auto;
+            transform: scaleX(-1);
+        }
+    }
+
+    &--hidden {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    &--dark {
+        background-color: $cMidnightExpress;
+
+        &.tooltip--pseudo-tail:after {
+            filter: $fMidnightExpress;
+        }
+    }
+
+    &__btns {
+        display: flex;
+        margin-top: 1rem;
+    }
+
+    &__btn {
+        flex: 1 0;
+
+        &:not(:last-child) {
+            margin-right: .5rem;
+        }
+    }
+}

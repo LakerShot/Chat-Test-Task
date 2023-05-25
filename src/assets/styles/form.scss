@@ -1,0 +1,91 @@
+.form {
+    &__inputs {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: .6rem;
+
+        &:not(:last-child) {
+            margin-bottom: 1.5rem;
+        }
+    }
+
+    &__input-wrap {
+        width: 100%;
+
+        &--not-error-text {
+            &:not(:last-child) {
+                margin-bottom: 1rem;
+            }
+        }
+    }
+
+    &__link {
+        transition-property: text-decoration-color;
+        transition-duration: var(--dTransit);
+        transition-delay: 0s;
+        text-transform: uppercase;
+        text-decoration-color: currentColor;
+        font-weight: 700;
+        color: currentColor;
+        transition: all .2s ease-in;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+    &__grid-items {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        margin-bottom: calc-rem(22px);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    &__footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+    }
+
+    &__forgot-link {
+        @include clear-link;
+        @include transit(color);
+        margin-right: 3px;
+        margin-left: auto;
+        font-weight: $fMedium;
+        color: var(--text-secondary-color);
+
+        @include hover {
+            color: $cPurple;
+        }
+    }
+
+    &__error-label {
+        @include transit(opacity);
+        font-size: calc-rem(14px);
+        color: $cWildWatermelon;
+
+        &:not(:last-child) {
+            margin-bottom: 1rem;
+        }
+    }
+
+    &__description-row {
+        margin-bottom: 2rem;
+    }
+
+    &__success-state {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: calc-rem(25px);
+    }
+
+    &__success-icon {
+        @include size(calc-rem(78px));
+        color: $cMediumSpringGreen;
+    }
+}

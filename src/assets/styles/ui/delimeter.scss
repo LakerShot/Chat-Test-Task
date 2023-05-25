@@ -1,0 +1,21 @@
+.delimiter {
+    &:not(:last-child):before {
+        @include size(1px, 80%);
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        background: radial-gradient(50% 50% at 50% 50%, #91ACD4 66.15%, rgba(145, 172, 212, 0) 100%);
+        opacity: 0.2;
+        border-radius: 50%;
+    }
+    
+    &--lg {
+        &:not(:last-child):before {
+            @media #{$mMoreLg} {
+                display: none;
+            }
+        }
+    }
+}

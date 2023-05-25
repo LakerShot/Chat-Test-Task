@@ -1,0 +1,97 @@
+.card {
+    @include clear-link;
+    @include user-drag-prevent;
+    display: block;
+    cursor: pointer;
+    color: var(--text-secondary-color);
+    outline: none;
+
+    &__card-inner {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__close-btn {
+        position: absolute;
+        right: 4%;
+        top: 2%;
+    }
+
+    &__picture-wrap {
+        position: relative;
+        
+        &:after {
+            content: var(--ComingSoon);
+            @include size(100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            inset: 0;
+            background-color: $cStormGrey;
+            color: var(--text-primary-color);
+            opacity: 0;
+            font-size: 1.8rem;
+            text-transform: uppercase;
+
+            @media #{$mMd} {
+                font-size: 1.7rem;
+            }
+
+            @media #{$mSm} {
+                font-size: 1.5rem;
+            }
+        }
+
+        &--disable {
+            &:after {
+                opacity: .85;
+                border-radius: 8px;
+            }
+        }
+    }
+
+    &__picture {
+        width: 100%;
+        margin-bottom: calc-rem(16px);
+        border-radius: 12px;
+
+        @media #{$mSm} {
+            margin-bottom: 12px;
+        }
+
+        &:after {
+            border-radius: 12px;
+        }
+
+        &.card__picture--game {
+            aspect-ratio: 287 / 193;
+        }
+    }
+
+    &__name-text {
+        &:not(:last-child) {
+            margin-right: .8em;
+        }
+    }
+
+    &__label {
+        display: inline-block;
+        vertical-align: middle;
+
+        &:not(:last-child) {
+            margin-right: .8em;
+        }
+    }
+
+
+    &--skeleton {
+        cursor: default;
+        pointer-events: none;
+    }
+
+    &--disable {
+        pointer-events: none;
+    }
+}

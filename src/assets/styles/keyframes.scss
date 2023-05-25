@@ -1,0 +1,131 @@
+@keyframes blink {
+    from,
+    to {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+@keyframes bounceInRight {
+    from, 60%, 75%, 90%, to {
+        animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+    from {
+        opacity: 0;
+        transform: translate3d(3000px, 0, 0);
+    }
+    60% {
+        opacity: 1;
+        transform: translate3d(-25px, 0, 0);
+    }
+    75% {
+        transform: translate3d(10px, 0, 0);
+    }
+    90% {
+        transform: translate3d(-5px, 0, 0);
+    }
+    to {
+        transform: none;
+    }
+}
+
+@keyframes bounceOutRight {
+    40% {
+        opacity: 1;
+        transform: translate3d(-20px, 0, 0);
+    }
+    to {
+        opacity: 0;
+        transform: translate3d(1000px, 0, 0);
+    }
+}
+
+@keyframes timerBlinking {
+    from,
+    to {
+        color: currentColor;
+    }
+
+    50% {
+        color: $cWildWatermelon;
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0);
+    }
+
+    50% {
+        transform: rotate(180deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes shine {
+    from {
+        background-position: -200px;
+    }
+
+    40%, to {
+        background-position: 340px;
+    }
+}
+
+@keyframes big-shine {
+    from {
+        background-position: -1200px;
+    }
+
+    40%, to {
+        background-position: 1300px;
+    }
+}
+
+@keyframes logo {
+    0% {
+        transform: rotate(0deg) translateX(0) translateY(0) rotate(0deg) scale(1);
+    }
+    25% {
+        transform: rotate(90deg) translateX(10%) translateY(36%) rotate(-90deg) scale(.70);
+    }
+    50% {
+        transform: rotate(180deg) translateX(10%) translateY(36%) rotate(-180deg) scale(.50);
+    }
+    75% {
+        transform: rotate(270deg) translateX(10%) translateY(36%) rotate(-270deg) scale(.70);
+    }
+    100% {
+        transform: rotate(360deg) translateX(0) translateY(0) rotate(-360deg) scale(1);
+    }
+}
+
+@keyframes border-blink {
+    0%,
+    100% {
+        border-color: transparent;
+    }
+
+    50% {
+        border-color: $cPurple;
+    }
+}
+
+@keyframes opacity-blink {
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    10%,
+    50%,
+    90% {
+        opacity: .6;
+    }
+}

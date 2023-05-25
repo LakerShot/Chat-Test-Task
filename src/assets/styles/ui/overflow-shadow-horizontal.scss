@@ -1,0 +1,63 @@
+.overflow-shadows-horizontal {
+    position: relative;
+
+    &:after, &:before {
+        @include transit('opacity, transform', .1s);
+        height: 100%;
+        width: calc-rem(100px);
+        content: "";
+        position: absolute;
+        bottom: 0;
+        opacity: 0;
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    &:after {
+        right: -2px;
+        background: linear-gradient(270deg, var(--primary-color) 0%, rgba(0, 0, 0, 0) 100%);
+        transform: translateX(100%);
+    }
+
+    &:before {
+        left: -1px;
+        background: linear-gradient(270deg, rgba(0, 0, 0, 0) 0%, var(--primary-color) 100%);
+        transform: translateX(-100%);
+    }
+
+    &--left {
+        &:before {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    &--right {
+        &:after {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    &--small {
+        &:after, &:before {
+            width: calc-rem(50px);
+        }
+    }
+
+    &--medium {
+        &:after, &:before {
+            width: calc-rem(75px);
+        }
+    }
+
+    &__inner {
+        height: 100%;
+        padding-right: calc-rem(20px);
+        overflow: auto;
+
+        &--overflow-hidden {
+            overflow: hidden;
+        }
+    }
+}

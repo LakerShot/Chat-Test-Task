@@ -1,0 +1,295 @@
+.table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    text-transform: capitalize;
+    font-weight: $fMedium;
+
+    &__sort {
+        display: inline-flex;
+        flex-direction: column;
+        vertical-align: middle;
+        margin-left: 6px;
+    }
+
+    &__header {
+        position: sticky;
+        top: calc(var(--hHeader) - 2px);
+        z-index: 1;
+        box-shadow: 0 2px $cStormGrey;
+        background-color: rgba(var(--secondary-color), .8);
+
+        &-icon {
+            @include size(6px, 8px);
+            color: $cStormGrey;
+            cursor: pointer;
+
+            &--active {
+                color: var(--text-color);
+            }
+        }
+
+        &-row {
+            color: rgb(var(--text-secondary-color), 0.5);
+
+            @media #{$mSm} {
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+
+        &--tabled {
+            display: table-header-group;
+        }
+
+        &-cell {
+            @include transit(color);
+            padding: calc-rem(20px) calc-rem(20px) calc-rem(20px) 0;
+            text-align: start;
+            color: $cStormGrey;
+            user-select: none;
+
+            &:not(.table__header-cell--no-hover) {
+                cursor: pointer;
+
+                @include hover {
+                    color: var(--text-color);
+                }
+            }
+
+            &:last-child {
+                text-align: end;
+                width: 150px;
+                padding-right: 0;
+            }
+
+            &--active {
+                color: var(--text-color);
+            }
+
+            &--full {
+                width: 100%;
+            }
+        }
+    }
+
+    &__header-infinite {
+        top: 0;
+    }
+
+    &__row {
+        border-bottom: solid 2px $cStormGrey;
+        color: var(--text-secondary-color);
+
+        @media #{$mSm} {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: calc-rem(12px) 0;
+        }
+
+        &--big-padding {
+            @media #{$mMd} {
+                padding: 1rem 0;
+            }
+        }
+
+        &--tabled {
+            @media #{$mMd} {
+                flex-wrap: nowrap;
+                align-items: flex-start;
+            }
+        }
+    }
+
+    &__cell {
+        padding: calc-rem(16px) calc-rem(16px) calc-rem(16px) 0;
+        font-size: 1rem;
+
+        @media #{$mSm} {
+            display: flex;
+            align-items: center;
+        }
+
+        &--full {
+            flex: 1;
+        }
+
+        &--no-wrap {
+            white-space: nowrap;
+        }
+
+        &-message {
+            padding: calc-rem(13px) 0;
+            border-top: 1px solid rgb(var(--text-secondary-color), 0.2);
+            border-bottom: 1px solid rgb(var(--text-secondary-color), 0.2);
+        }
+
+        &-inner {
+            color: var(--text-secondary-color);
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 10px;
+
+            &:last-child {
+                padding-top: 10px;
+            }
+
+            &--column {
+                flex-direction: column;
+            }
+        }
+
+        &-spoiler {
+            display: none;
+            overflow: hidden;
+
+            @media #{$mMd} {
+                display: flex;
+                flex-direction: column;
+                flex-basis: 100%;
+            }
+
+            &-wrapper {
+                display: flex;
+                flex-direction: column;
+                margin-top: calc-rem(10px);
+                padding: calc-rem(16px);
+                font-size: calc-rem(14px);
+                background-color: var(--primary-color);
+                border-radius: 7px;
+
+                &:first-child {
+                    padding-bottom: 0;
+                }
+            }
+        }
+
+        &-arrow {
+            @include size(7px, 5px);
+            @include transit(transform);
+
+            margin-left: 10px;
+            transform: rotate(0);
+            color: var(--text-secondary-color);
+
+
+            &--activated {
+                color: rgba(var(--text-secondary-color__rgb), 0.5);
+                transform: rotate(180deg);
+            }
+        }
+
+        &--tabled {
+            display: table-cell;
+        }
+
+        &--bordered-left {
+            position: relative;
+            padding: calc-rem(10px) calc-rem(16px);
+
+            &:before {
+                content: '';
+                position: absolute;
+                left: 0;
+                min-height: calc-rem(32px);
+                width: 0;
+                background-color: initial;
+                border-radius: 50px;
+                border: 3px solid;
+            }
+
+            &--completed {
+                color: var(--green-color);
+            }
+
+            &--canceled {
+                color: $cCarnation;
+            }
+
+            &--pending {
+                color: var(--text-secondary-color);
+            }
+        }
+
+        &--tiny {
+            &-text {
+                font-size: calc-rem(11px);
+            }
+
+            &-green {
+                color: rgba(var(--green-color), 0.5);
+            }
+
+            &-red {
+                color: rgba($cCarnation, 0.5);
+            }
+        }
+
+        &--column {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1px;
+        }
+
+        &--bold {
+            font-weight: $fBold;
+        }
+
+        &--center {
+            display: flex;
+            align-items: center;
+        }
+
+        &--text-end {
+            padding-right: 0;
+            text-align: end;
+        }
+
+        &--gray {
+            color: rgb(var(--text-secondary-color), 0.5);
+        }
+
+
+        &--completed {
+            color: var(--green-color);
+        }
+
+        &--canceled {
+            color: $cCarnation;
+        }
+
+        &--pending {
+            color: var(--text-secondary-color);
+        }
+
+        &--centered {
+            text-align: center;
+        }
+    }
+
+    &__picture {
+        @include size(40px);
+        margin-right: 15px;
+        flex-shrink: 0;
+
+        @media #{$mMd} {
+            @include size(46px);
+            margin-right: 25px;
+        }
+    }
+
+    &__text {
+        color: var(--text-secondary-color);
+    }
+
+    &__loader-wrapper {
+        position: relative;
+        transform: translateY(27px);
+    }
+
+    &__loader {
+        font-size: calc-rem(54px);
+    }
+}

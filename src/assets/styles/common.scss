@@ -1,0 +1,149 @@
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: var(--rem);
+}
+
+body {
+    min-width: 375px;
+    margin: 0;
+    background-color: $cWhiteSmoke;
+    height: 100vh;
+    font-family: $fGilroy;
+    font-weight: $fBold;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    -webkit-tap-highlight-color: transparent;
+    color: $cDark;
+    cursor: default;
+}
+
+.app {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100 * var(--vh));
+
+    &__loader-wrap {
+        position: relative;
+        flex-grow: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    > .modal-wrap {
+        @include size(100%, calc(100 * var(--vh)));
+        z-index: var(--zModal);
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+}
+
+.page {
+    flex-grow: 1;
+    padding-top: calc-rem(36px);
+    padding-bottom: calc-rem(64px);
+
+    @media #{$mSm} {
+        padding-top: 20px;
+    }
+
+    @media #{$mXs} {
+        padding-bottom: 42px;
+    }
+
+    &__back-btn {
+        margin-bottom: 1.5rem;
+    }
+
+    &__game-dashboard {
+        &:not(:last-child) {
+            margin-bottom: calc-rem(66px);
+
+            @media #{$mMd} {
+                margin-bottom: 0;
+            }
+
+        }
+
+    }
+
+    &__modal-wrap {
+        @include size(100%);
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    &__chat-widget {
+        z-index: var(--zChatWidgetBtn);
+        position: fixed;
+        top: var(--hHeader);
+        bottom: 0;
+        right: 0;
+
+        &.has-ticker {
+            .chat-widget__btn {
+                bottom: calc(calc-rem(64px) + var(--hTicker));
+                @media #{$mMd} {
+                    bottom: calc(calc-rem(18px) + var(--hTicker));
+                }
+            }
+        }
+
+        .chat-widget__btn {
+            right: calc-rem(35px);
+            bottom: calc-rem(70px);
+            @media #{$mMd} {
+                bottom: calc-rem(30px);
+                right: calc-rem(15px);
+            }
+        }
+    }
+}
+
+:focus-visible {
+    outline: $cPurple solid 2px;
+}
+
+::selection {
+    background-color: var(--text-secondary-color);
+    color: $cPurple;
+}
+
+.disabled {
+    opacity: .5 !important;
+    pointer-events: none !important;
+}
+
+.cursor-not-allowed {
+    cursor: not-allowed !important;
+}
+
+.highlight-text {
+    color: $cPurple;
+}
+
+.transparent-text {
+    opacity: .5;
+}
+
+.periwinkle-text {
+    color: var(--text-secondary-color);
+}
+
+.text-align-center {
+    text-align: center;
+}
+
+.white-space-pre-wrap {
+    white-space: pre-wrap;
+}

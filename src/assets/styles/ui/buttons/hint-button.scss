@@ -1,0 +1,20 @@
+.hint-btn {
+    @include transit(color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    background-color: transparent;
+    border-radius: 50%;
+    border: 2px solid var(--border-color);
+    color: $cLightSteelBlue;
+    cursor: pointer;
+
+    svg {
+        @include size(70%);
+    }
+
+    @include hover {
+        color: $cPurple;
+    }
+}

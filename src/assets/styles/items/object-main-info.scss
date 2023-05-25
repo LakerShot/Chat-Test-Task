@@ -1,0 +1,124 @@
+.object-main-info {
+    display: flex;
+    align-items: flex-start;
+
+    &--link {
+        @include clear-link();
+
+        @include hover {
+            .object-main-info__name {
+                color: var(--accent-color);
+            }
+        }
+    }
+
+    &--button {
+        cursor: pointer;
+
+        @include hover {
+            .object-main-info__name {
+                color: $cPurple;
+            }
+
+            .icon:after {
+                border-color: $cPurple;
+            }
+        }
+
+        &:focus-visible {
+            outline: none;
+
+            .icon:after {
+                border-color: $cPurple;
+            }
+        }
+    }
+
+    &--sm-big {
+        .object-main-info__name {
+            @media #{$mSm} {
+                font-size: 15px;
+            }
+        }
+
+        .object-main-info__picture {
+            @media #{$mSm} {
+                width: 160px;
+                margin-right: 30px;
+            }
+
+            @media #{$mXs} {
+                width: 132px;
+            }
+        }
+
+        .object-main-info__tag {
+            &:not(:last-child) {
+                @media #{$mSm} {
+                    font-size: 12px;
+                    margin-bottom: 4px;
+                }
+            }
+        }
+    }
+
+    &__picture {
+        flex-shrink: 0;
+        width: calc-rem(112px);
+        box-shadow: 7px 7px 35px rgba(33, 35, 51, 0.5);
+    }
+
+    &__text-info {
+        align-self: center;
+        margin-left: calc-rem(23px);
+    }
+
+    &__name {
+        @include transit(color);
+        margin-bottom: calc-rem(9px);
+        font-size: calc-rem(26px);
+        line-height: calc(31 / 26);
+
+        @media #{$mSm} {
+            font-size: 19px;
+        }
+    }
+
+    &__tag {
+        display: flex;
+        align-items: center;
+        font-weight: $fMedium;
+        line-height: 1;
+        color: var(--text-secondary-color);
+
+        &:not(:last-child) {
+            margin-bottom: 7px;
+        }
+
+        &:before {
+            @include size(0.4em);
+            content: '';
+            margin-right: 0.4em;
+            border-radius: 50%;
+            background-color: currentColor;
+        }
+
+        &--green:before {
+            background-color: var(--green-color);
+        }
+
+        &--yellow:before {
+            background-color: $cTangerineYellow;
+        }
+
+        &--pink:before {
+            background-color: $cPink;
+        }
+    }
+
+    &__btn {
+        @include size(173px, 40px);
+        margin-top: 30px;
+        font-size: 13px;
+    }
+}

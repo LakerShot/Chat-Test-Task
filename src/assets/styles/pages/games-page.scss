@@ -1,0 +1,55 @@
+.games-page {
+    position: relative;
+
+    &__title {
+        margin-bottom: calc-rem(32px);
+    }
+
+    &__alt-title {
+        color: $cStormGrey;
+    }
+
+    &__filter-btn {
+        position: sticky;
+        top: calc(var(--hHeader) + 1rem);
+        z-index: calc(var(--zToasts) - 1);
+        min-width: calc-rem(180px);
+        margin: 0 0 calc-rem(-45px) auto;
+
+        @media #{$mSm} {
+            top: calc(var(--hHeader) + .5rem);
+            margin-bottom: calc-rem(-40px);
+            min-width: auto;
+        }
+
+        @media #{$mXs} {
+            margin-bottom: calc-rem(-34px);
+        }
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: calc-rem(36px) calc-rem(12px);
+    }
+
+    &__filter-menu-wrap {
+        @include size(100%, calc(100 * var(--vh) - var(--hHeader)));
+        position: fixed;
+        flex-grow: 1;
+        top: var(--hHeader);
+        right: 0;
+        z-index: var(--zHeader);
+    }
+
+    &__empty {
+        padding: calc-rem(80px) 0;
+        text-align: center;
+        font-size: calc-rem(28px);
+        line-height: calc(34 / 28);
+
+        @media #{$mXs} {
+            font-size: 18px;
+        }
+    }
+}

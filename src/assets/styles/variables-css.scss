@@ -1,0 +1,77 @@
+:root {
+    // Common
+    --rem: #{$baseRem};
+    --vh: 1vh;
+
+    --hHeader: #{calc-rem(90px)};
+    --hTicker: #{calc-rem(80px)};
+    --minHInput: #{calc-rem(64px)};
+    --minHInputSm: #{calc-rem(53px)};
+    --asideWidth: #{calc-rem(90px)};
+
+    // Text
+    --ComingSoon: 'Coming soon';
+    --ComingSoonShort: "Soon";
+
+    // Gutters
+    --gContent: #{$gContent};
+    --gContentSm: #{$gContentSm};
+
+    // Z-index
+    --zToastOnModal: 115;
+    --zModal: 110;
+    --zHeader: 100;
+    --zChatWidgetBtn: 95;
+    --zToasts: 95;
+    --zMultiselectOptions: 50;
+    --zDetailCard: 50;
+    --zTooltip: 40;
+
+    // Animation Delays
+    --dTransit: 0.3s;
+
+    // Breakpoints
+    --bXl: #{$bXl};
+    --bLg: #{$bLg};
+    --bMd: #{$bMd};
+    --bSm: #{$bSm};
+    --bXs: #{$bXs};
+
+    --bHXl: #{$bHXl};
+    --bHLg: #{$bHLg};
+    --bHMd: #{$bHMd};
+    --bHSm: #{$bHSm};
+    --bHXs: #{$bHXs};
+
+    --bcBody: #{var(--secondary-color)};
+
+    @media #{$mXl} {
+        --asideWidth: 60px;
+    }
+
+    @media #{$mXl}, #{$mHLg} {
+        --rem: 14px;
+    }
+
+    @media #{$mXl} {
+        --gContent: 80px;
+    }
+
+    @media #{$mMd}, #{$mHMd} {
+        --hHeader: #{calc-rem(78px)};
+    }
+
+    @media #{$mSm} {
+        --minHInput: 53px;
+        --gContent: 18px;
+    }
+
+    @media #{$mXs} {
+        --minHInput: 50px;
+    }
+}
+
+[lang='ru'] {
+    --ComingSoon: "Скоро";
+    --ComingSoonShort: "Скоро";
+}

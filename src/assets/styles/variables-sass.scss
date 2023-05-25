@@ -1,0 +1,185 @@
+// Fonts
+$fnGilroy: 'Gilroy';
+$fnAcrom: 'Acrom';
+
+$fGilroy: $fnGilroy, sans-serif;
+$fAcrom: $fnAcrom, sans-serif;
+
+$fMedium: 500;
+$fBold: 700;
+
+//Sizes
+$mwContent: 1680px;
+$gContent: 120px;
+$gContentSm: 9px;
+$baseRem: 16px;
+
+// Colors
+// Colors
+$cComet: #5B607B;
+$cStormGrey: #6F728C;
+$cLightSteelBlue: #B9BDE1;
+$cYellowOrange: #FFA943;
+$cTangerineYellow: #FFC700;
+$cRedOrange: #FF273B;
+$cWhiteSmoke: #E9E9E9;
+$cDarkSlateGray: #484041;
+$cGold: #D3B200;
+$cSeaGreen: #418D5C;
+$cForestGreen: #36784D;
+$cDarkSlateGray: #2E2E3A;
+$cDarkSlateBlue: #414356;
+$cDodgerBlue: #278AFF;
+$cBlack: #000000;
+$cRichBlack: #06150C;
+$cBlackBean: #081C10;
+$сPalmGreen: #092012;
+$cBush: #0E321C;
+$cParsley: #124325;
+$cJewel: #167839;
+$cPastelGreen: #70EE9C;
+$сGray: #909090;
+$cLightGray: #D0D0D0;
+$cGamboge: #FFA31A;
+$cCorn: #F1CC08;
+
+// New Newada color
+$cCinder: #11131C;
+$cVulcan: #0F1017;
+$cCodGray: #1E1E1E;
+$cShark: #2A2B33;
+$cMirage: #161823;
+$cDark: #14151E;
+$RuinedSmoke: #0D0D13;
+$cMidNightExpress: #242839;
+$cCorsicanPurple: #7B82AE;
+$cBlackHowl: #1E2030;
+$cSoulFullBlue: #777e90;
+$cFadingSunset: #b1b5c3;
+$cTuna: #353945;
+$cBlackVelvet: #222332;
+$cMagicNight: #393C56;
+$cRaven: #777E91;
+$cPersianIndigo: #471795;
+$cAmber: #F8C200;
+$cAmberDark: #F8C20033;
+$cCarnation: #FD4E5E;
+$cTurquoiseBlue: #68EDC6;
+$cLightSteelBlue: #BCC0E5;
+$cSantasGray: #A2A2A3;
+$сGhostWhite: #F2F2F2;
+$cWhite: #FFFFFF;
+$cAthensGray: #FCFCFD;
+$cEbonyClay: #1E2231;
+$cEbonyClay1: #1E212F;
+$cAquamarine: #48FFC8;
+$cGoldenTainoi: #FFC54D;
+$cButtercup: #F1A208;
+$cJungleGreen: #27AE60;
+$cCoralRed: #FF3F50;
+$cDarkCyan: #06A77D;
+$cRoyalBlue: #3154E1;
+$cSalmon: #FF8C5B;
+$cHeliotrope: #A36EFB;
+$cWildWatermelon: #FF5A6B;
+$cCoralRed: #FF3449;
+$cBrinkPink: #FB6B79;
+$cSteelGray: #1E1F2D;
+$cSpringGreen: #00FFAF;
+$cJumbo: #84858B;
+
+$cWhite: #FFF;
+$cBlack: #000;
+
+$cPurpleDark: #260548;
+$cPixiePowder: #39058D;
+$cPurpleHeart: #5922B2;
+$cHanPurple: #7927FF;
+$cPurple: #8769FF;
+
+$cDodgerBlue: #278AFF;
+
+$cDarkGrey: #252635;
+$cMidnightExpress: #1E2030;
+$cDarkValhalla: #212333;
+$cValhalla: #2D2F42;
+$cCloudBurst: #36384E;
+$cBlueZodiac: #383A50;
+$cBlueZodiacLight: #414356;
+$cCloudBurstLight: #393C56;
+$cIndependence: #4B576C;
+$cComet: #5B607B;
+$cStormGrey: #6F728C;
+
+$cLightSteelBlue: #B9BDE1;
+$cPeriwinkle: #BCC0E5;
+
+$cSpringGreen: #00FFA3;
+$cSpringGreenLight: #86FFD9;
+$cMediumSpringGreen: #22EEA4;
+
+$cYellowOrange: #FFA943;
+$cCorn: #F9E65C;
+$cLemon: #FFE210;
+$cTangerineYellow: #FFC700;
+$cLaserLemon: #FEF85F;
+
+$cRedOrange: #FF273B;
+$cScarletRed: #FF5050;
+$cWildWatermelon: #FF5A6B;
+$cCarnation: #F15F68;
+$cSalmon: #FF8C5B;
+
+$cPink: #FF0092;
+
+// Filters
+$fWhite: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7485%) hue-rotate(96deg) brightness(98%) contrast(109%);
+
+$fPurple: brightness(0) saturate(100%) invert(45%) sepia(44%) saturate(4252%) hue-rotate(229deg) brightness(101%) contrast(100%);
+$fPeriwinkle: brightness(0) saturate(100%) invert(83%) sepia(10%) saturate(790%) hue-rotate(197deg) brightness(93%) contrast(93%);
+$fCloudBurstLight: brightness(0) saturate(100%) invert(19%) sepia(9%) saturate(2478%) hue-rotate(196deg) brightness(94%) contrast(81%);
+
+$fMediumSpringGreen: brightness(0) saturate(100%) invert(79%) sepia(42%) saturate(826%) hue-rotate(93deg) brightness(99%) contrast(89%);
+
+$fMidnightExpress: brightness(0) saturate(100%) invert(12%) sepia(15%) saturate(1264%) hue-rotate(195deg) brightness(91%) contrast(95%);
+
+
+// Breakpoints
+$bXXL: 1600px;
+$bXl: 1400px;
+$bLg: 1200px;
+$bMd: 992px;
+$bSm: 768px;
+$bXs: 576px;
+
+$bMinWidth: 375px;
+
+$bHXl: 1025px;
+$bHLg: 901px;
+$bHMd: 801px;
+$bHSm: 769px;
+$bHXs: 577px;
+
+//Medias
+$mXXl: '(max-width: #{$bXXL - 1})';
+$mXl: '(max-width: #{$bXl - 1})';
+$mLg: '(max-width: #{$bLg - 1})';
+$mMd: '(max-width: #{$bMd - 1})';
+$mSm: '(max-width: #{$bSm - 1})';
+$mXs: '(max-width: #{$bXs - 1})';
+
+$mMoreXl: '(min-width: #{$bXl})';
+$mMoreLg: '(min-width: #{$bLg})';
+$mMoreMd: '(min-width: #{$bMd})';
+$mMoreSm: '(min-width: #{$bSm})';
+$mMoreXs: '(min-width: #{$bXs})';
+
+$mHXl: '(max-height: #{$bHXl - 1})';
+$mHLg: '(max-height: #{$bHLg - 1})';
+$mHMd: '(max-height: #{$bHMd - 1})';
+$mHSm: '(max-height: #{$bHSm - 1})';
+$mHXs: '(max-height: #{$bHXs - 1})';
+
+$mMinWidth: '(max-width: #{$bMinWidth - 1})';
+$mMaxContent: '(max-width: #{$mwContent + 2 * $gContent})';
+$mPhoneHorizontal: '#{$mMd} and #{$mHXs} and (orientation: landscape)';

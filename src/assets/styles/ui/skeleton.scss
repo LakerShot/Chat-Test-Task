@@ -1,0 +1,52 @@
+.skeleton {
+    @include skeleton-animation;
+
+    &--line {
+        @include size(10em, .95em);
+        display: block;
+        border-radius: 1em;
+
+        &.skeleton--small {
+            width: 5em !important;
+        }
+
+        &.skeleton--medium {
+            width: 7em !important;
+        }
+
+        &.skeleton--big {
+            width: 10em !important;
+        }
+
+        &.skeleton--one-char {
+            width: 1em !important;
+        }
+
+        &.skeleton--100 {
+            width: 100% !important;
+        }
+
+        &.skeleton--90 {
+            width: 90% !important;
+        }
+
+        &.skeleton--70 {
+            width: 70% !important;
+        }
+    }
+
+    &--inline-block {
+        display: inline-block;
+    }
+
+    &--big {
+        background-size: 800px !important;
+        animation-name: big-shine !important;
+
+        &.skeleton--side {
+            @media #{$mMoreLg} {
+                animation-delay: .25s !important;
+            }
+        }
+    }
+}

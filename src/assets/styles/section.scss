@@ -1,0 +1,41 @@
+.section {
+    position: relative;
+
+    &--border-bottom {
+        &::after {
+            @media #{$mMd} {
+                content: '';
+                display: block;
+                width: calc(100% + (var(--gContent) * 2));
+                height: 9px;
+                margin: 0 calc(-1 * var(--gContent));
+                background: var(--primary-color);
+                position: absolute;
+                right: 0;
+                bottom: 0;
+            }
+        }
+    }
+
+    &__title {
+        max-width: 100%;
+        margin: 0 0 calc-rem(34px);
+
+        @media #{$mSm} {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__alt-title {
+        color: $cStormGrey
+    }
+
+    &__title-icon {
+        @include size(21px);
+        margin-left: 14px;
+
+        @media #{$mMd} {
+            margin-bottom: -4px;
+        }
+    }
+}

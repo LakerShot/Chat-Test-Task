@@ -1,0 +1,213 @@
+.game-dashboard {
+    --baseHGameDashboard: 786px;
+    --gGameDashboardMain: 16px;
+    --hButtonFixedWrap: 76px;
+    --mhGameDashboard: 600px;
+    --borderGameDashboard: 2px;
+    --baseHGameDashboardInner: calc(var(--baseHGameDashboard) - 2 * var(--gGameDashboardMain) - 2 * var(--borderGameDashboard));
+
+    @media #{$mLg} {
+        --gGameDashboardMain: 14px;
+    }
+
+    @media #{$mXl} and (orientation: landscape) {
+        --baseHGameDashboard: max(calc(100 * var(--vh) - var(--hHeader) - #{calc-rem(36px)}), var(--mhGameDashboard));
+    }
+
+    @media #{$mSm}, #{$mHMd} {
+        --gGameDashboardMain: 8px;
+    }
+
+    @media #{$mPhoneHorizontal} {
+        --baseHGameDashboard: calc(100 * var(--vh));
+    }
+
+    @media #{$mHLg} {
+        --baseHGameDashboard: 656px;
+    }
+
+    .app--fullscreen & {
+        --baseHGameDashboard: calc(100 * var(--vh) - var(--hHeader) - 1rem);
+    }
+
+    &__inner {
+        display: flex;
+        column-gap: 1rem;
+        padding-right: calc-rem(100px);
+
+        @media #{$mLg} {
+            flex-direction: column;
+        }
+
+        @media #{$mPhoneHorizontal} {
+            max-width: none;
+            margin-left: 0;
+            margin-right: 0;
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        .app--fullscreen & {
+            max-width: none;
+            margin-left: 0;
+            margin-right: 0;
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+
+    &__main {
+        position: relative;
+        display: grid;
+        grid-auto-rows: var(--baseHGameDashboardInner);
+        flex: 1 0;
+        gap: var(--gGameDashboardMain);
+        padding: var(--gGameDashboardMain);
+        min-height: var(--baseHGameDashboard);
+        border-radius: 12px;
+        border: var(--borderGameDashboard) solid var(--border-color);
+        background-color: var(--primary-color);
+
+        @media #{$mLg} {
+            min-height: auto;
+            margin-right: 0;
+            border-radius: 12px 12px 0 0;
+            border-bottom: none;
+        }
+
+        @media #{$mPhoneHorizontal} {
+            position: fixed;
+            left: 0;
+            top: 0;
+            z-index: var(--zHeader);
+            height: 100vh;
+            width: 100vw;
+            overflow: auto;
+        }
+
+        .app--fullscreen & {
+            @media #{$mHXs} {
+                position: fixed;
+                left: 0;
+                top: 0;
+                z-index: var(--zHeader);
+                height: 100vh;
+                width: 100vw;
+                overflow: auto;
+            }
+        }
+
+        &--row {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: var(--baseHGameDashboardInner);
+        }
+
+        &--v-window,
+        &--h-window,
+        &--windows,
+        &--fist {
+            grid-auto-rows: calc((var(--baseHGameDashboardInner) / 2) - (var(--gGameDashboardMain) / 2));
+
+            .game-dashboard__game-session {
+                &:first-child {
+                    grid-area: a;
+                }
+            }
+        }
+
+        &--v-window {
+            grid-template-areas: 'a b'
+                                 'a c';
+        }
+
+        &--h-window {
+            grid-template-areas: 'a a'
+                                 'a a'
+                                 'b c';
+        }
+
+        &--windows {
+            grid-template-areas: 'a b'
+                                 'c d';
+        }
+
+        &--fist {
+            grid-template-areas: 'a a a'
+                                 'a a a'
+                                 'b c d';
+        }
+    }
+
+    &__controller {
+        height: var(--baseHGameDashboard);
+
+        @media #{$mMoreLg} {
+            position: sticky;
+            top: calc(var(--hHeader) + calc-rem(16px));
+        }
+
+        @media #{$mLg} {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            z-index: var(--zHeader);
+            height: auto;
+        }
+
+        .app--fullscreen & {
+            top: 0;
+            max-height: calc(100 * var(--vh));
+
+            @media #{$mMoreLg} {
+                min-height: 638px;
+            }
+
+            @media #{$mHXs} {
+                display: none;
+            }
+        }
+    }
+
+    &__fullscreen-btn {
+        @include size(calc-rem(40px));
+        position: absolute;
+        left: 2rem;
+        top: 2rem;
+        z-index: 1;
+    }
+
+    &__close-btn {
+        @include size(38px);
+        display: none;
+        position: fixed;
+        right: 0;
+        top: calc(var(--hHeader) + 5px);
+        z-index: var(--zHeader);
+        transform: rotate(90deg);
+
+        .app--fullscreen & {
+            display: block;
+
+            @media #{$mHXs} {
+                right: 22px;
+                top: 0;
+                transform: none;
+            }
+        }
+    }
+
+    &__play-btn-wrap {
+        @include size(100%, var(--hButtonFixedWrap));
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        z-index: var(--zHeader);
+        padding: 10px 16px;
+        border-top: 2px solid var(--border-color);
+        background-color: var(--primary-color);
+    }
+
+    &__play-btn {
+        @include size(100%, 54px);
+    }
+}

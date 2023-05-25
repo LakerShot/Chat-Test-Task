@@ -1,0 +1,233 @@
+.game-dashboard-controller {
+    --content-vertical-padding: #{calc-rem(25px)};
+    --content-horizontal-padding: #{calc-rem(20px)};
+    --title-font-size: #{calc-rem(22px)};
+    @include transit(width);
+    display: flex;
+    background-color: var(--secondary-color);
+    border: var(--borderGameDashboard) solid var(--border-color);
+    border-radius: calc-rem(12px);
+    overflow: hidden;
+    width: calc-rem(90px);
+
+    &__nav {
+        @include size(calc-rem(90px), 100%);
+        z-index: 1;
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: calc-rem(24px) calc-rem(8px);
+        background-color: var(--primary-color);
+        border-radius: calc-rem(12px);
+        border-right: var(--borderGameDashboard) solid transparent;
+
+        @media #{$mLg} {
+            flex-direction: row;
+            padding: 10px 0;
+            border-top: 2px solid var(--border-color);
+        }
+
+        @media #{$mSm}, #{$mHMd} and #{$mLg} {
+            padding: 6px 0;
+        }
+    }
+
+    &__btn-wrap {
+        position: relative;
+
+        @media #{$mLg} {
+            flex: 1 0;
+        }
+
+        &:not(:last-child) {
+            @media #{$mMoreLg} {
+                margin-bottom: calc-rem(24px);
+            }
+        }
+    }
+
+    &__btn {
+        @include transit(color);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+        background-color: inherit;
+        border: none;
+        font-size: calc-rem(12px);
+        line-height: calc(15 / 12);
+        font-weight: $fBold;
+        font-family: $fGilroy;
+        color: var(--text-secondary-color);
+        text-align: center;
+        cursor: pointer;
+
+        @media #{$mLg} {
+            margin: 0 auto;
+        }
+
+        @include hover {
+            color: var(--text-color);
+
+            .game-dashboard-controller__btn-inner {
+                border-color: var(--accent-color);
+            }
+        }
+
+        &--active {
+            color: var(--text-color);
+
+            .game-dashboard-controller__btn-inner {
+                border-color: var(--accent-color);
+            }
+        }
+
+        &--deposit {
+            .game-dashboard-controller__btn-inner {
+                background-image: linear-gradient(138.19deg, #F9E65C 1.28%, #FFF5CA 35.9%, #F9C95C 79.82%, #F9B15C 100.49%);
+
+                &:before {
+                    @include size(calc(100% + 2px));
+                    @include transit(border-color);
+                    content: '';
+                    position: absolute;
+                    top: -1px;
+                    left: -1px;
+                    background-color: var(--primary-color);
+                    border-radius: inherit;
+                    border: inherit;
+                    border-width: 1px;
+                }
+            }
+
+            svg {
+                @include transit(fill);
+            }
+
+            @include hover {
+                .game-dashboard-controller__btn-inner {
+                    &, &:before {
+                        border-color: transparent;
+                    }
+                }
+
+                svg {
+                    fill: url('#gold-gradient');
+                }
+            }
+
+            &.game-dashboard-controller__btn--active {
+                .game-dashboard-controller__btn-inner {
+                    &, &:before {
+                        border-color: transparent;
+                    }
+                }
+
+                svg {
+                    fill: url('#gold-gradient');
+                }
+            }
+        }
+
+        &--chat {
+            .game-dashboard-controller__chat-symbol {
+                @include size(calc-rem(20px));
+            }
+        }
+
+        &-inner {
+            @include size(calc-rem(50px));
+            @include transit(border-color);
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            border: 2px solid var(--border-color);
+
+            svg {
+                @include transit(fill);
+            }
+
+            @media #{$mSm}, #{$mHMd} and #{$mLg} {
+                @include size(30px)
+            }
+        }
+
+        svg {
+            @include size(calc-rem(26px));
+            position: relative;
+        }
+
+        &-text {
+            position: relative;
+            margin-top: .6em;
+            white-space: nowrap;
+        }
+    }
+
+    &__content {
+        @include size(calc-rem(338px), 100%);
+        display: flex;
+        flex-direction: column;
+        flex-shrink: 0;
+        padding: var(--content-vertical-padding) var(--content-horizontal-padding);
+        border-radius: 0 calc-rem(12px) calc-rem(12px) 0;
+
+        &-title {
+            margin: 0;
+            text-align: center;
+            font-size: var(--title-font-size);
+            line-height: 1;
+        }
+
+        &-inner {
+            position: relative;
+            padding-top: var(--content-vertical-padding);
+            flex-grow: 1;
+            max-height: calc(100% - var(--title-font-size));
+        }
+
+        &.overflow-shadows {
+            &:before {
+                top: var(--content-vertical-padding)
+            }
+
+            &:after {
+                bottom: var(--content-vertical-padding);
+            }
+        }
+    }
+
+    &__main-btn {
+        @include size(100%, calc-rem(58px));
+        margin-top: calc-rem(25px);
+    }
+
+    &__close-btn {
+        @include size(calc-rem(58px));
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 1;
+    }
+
+    &__chat {
+        --inner-horizontal-padding: calc(var(--content-horizontal-padding) / 2);
+        height: 100%;
+        margin: 0 calc(-1 * var(--content-horizontal-padding) / 2);
+    }
+
+    &__switch {
+        margin-top: calc-rem(80px)
+    }
+
+    &--opened {
+        width: calc-rem(432px);
+
+        .game-dashboard-controller__nav {
+            border-right-color: var(--border-color);
+        }
+    }
+}

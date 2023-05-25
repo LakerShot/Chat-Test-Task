@@ -1,0 +1,55 @@
+@import './src/assets/styles/variables-sass.scss';
+
+.header {
+    height: var(--hHeader);
+    background-color: $cParsley;
+    color: $cWhiteSmoke;
+
+    &__inner {
+        max-width: 90%;
+        height: 100%;
+        margin:  0 auto;
+        display: flex;
+        align-items: center;
+    }
+
+    &__title {
+        position: relative;
+        font-size: 1.5rem;
+        &:after {
+            content: '';
+            font-size: .9rem;
+            display: inline;
+            text-align: center;
+            position: absolute;
+            right: -10%;
+            top: 0;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: $cJewel;
+            animation-name: signal;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+            animation-play-state: running;
+        }
+    }
+}
+
+@keyframes signal {
+    0% {
+        background-color: $cJewel;
+    }
+
+    25% {
+        background-color: $cPastelGreen;
+    }
+
+    50% {
+        background-color: $cPastelGreen;
+    }
+
+    100% {
+        background-color: $cJewel;
+    }
+}
